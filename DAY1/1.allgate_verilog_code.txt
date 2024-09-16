@@ -1,0 +1,14 @@
+module allgates(x,y,not_gate,and_gate,or_gate,nand_gate,nor_gate,exor_gate,exnor_gate);
+input x,y;
+output not_gate,and_gate,or_gate,nand_gate,nor_gate,exor_gate,exnor_gate;
+
+assign not_gate=~x;
+assign and_gate=x&y;
+assign or_gate=x|y;
+assign nand_gate=~(x&y);
+assign nor_gate=~(x|y);
+assign exor_gate=x^y;
+assign exnor_gate=x~^y;
+
+endmodule
+

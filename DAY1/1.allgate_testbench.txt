@@ -1,0 +1,20 @@
+
+
+module allgate_tb();
+reg x,y;
+wire not_gate,and_gate,or_gate,nand_gate,nor_gate,exor_gate,exnor_gate;
+
+allgates dut(x,y,not_gate,and_gate,or_gate,nand_gate,nor_gate,exor_gate,exnor_gate);
+
+initial begin
+x=0; y=0;
+#10
+x=0; y=1;
+#10
+x=1;y=0;
+#10
+x=1;y=1;
+#10
+$finish();
+end
+endmodule
