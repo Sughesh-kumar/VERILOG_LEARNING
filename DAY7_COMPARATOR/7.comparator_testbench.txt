@@ -1,0 +1,34 @@
+module COMPARATOR_TB;
+
+reg [1:0]a,b;
+wire less_than,greater_than,equal_to;
+
+COMPARATOR dut(a,b,less_than,greater_than,equal_to);
+
+initial begin
+
+    a = 2'b00; b = 2'b00; #10;
+    a = 2'b00; b = 2'b01; #10;
+    a = 2'b00; b = 2'b10; #10;
+    a = 2'b00; b = 2'b11; #10;
+
+    a = 2'b01; b = 2'b00; #10;
+    a = 2'b01; b = 2'b01; #10;
+    a = 2'b01; b = 2'b10; #10;
+    a = 2'b01; b = 2'b11; #10;
+
+    a = 2'b10; b = 2'b00; #10;
+    a = 2'b10; b = 2'b01; #10;
+    a = 2'b10; b = 2'b10; #10;
+    a = 2'b10; b = 2'b11; #10;
+
+    a = 2'b11; b = 2'b00; #10;
+    a = 2'b11; b = 2'b01; #10;
+    a = 2'b11; b = 2'b10; #10;
+    a = 2'b11; b = 2'b11; #10;
+
+  $finish;
+
+end
+
+endmodule
