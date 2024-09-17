@@ -1,0 +1,17 @@
+module MULTIPLIER(a, b, sum);
+
+  input  [1:0] a, b;
+  output [3:0] sum;
+  wire a0b1, a1b0, ha0c, a1b1;
+
+  and (sum[0], a[0], b[0]);      
+  and (a0b1, a[0], b[1]);       
+  and (a1b0, a[1], b[0]);        
+
+  half_adder ha0 (a0b1, a1b0, sum[1], ha0c);
+
+  and (a1b1, a[1], b[1]);
+
+  half_adder ha1 (ha0c, a1b1, sum[2], sum[3]);
+
+endmodule
