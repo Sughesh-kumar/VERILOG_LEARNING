@@ -1,0 +1,11 @@
+module X_TO_BCD(x, BCD);
+input [3:0] x;
+output reg [3:0] BCD;
+
+always @(*) begin
+    if (x >= 4'b0011 && x <= 4'b1100)
+        BCD = x - 4'b0011;
+    else
+        BCD = 4'bXXXX;
+end
+endmodule
