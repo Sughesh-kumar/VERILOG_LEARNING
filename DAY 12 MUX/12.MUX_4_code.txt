@@ -1,0 +1,8 @@
+module MUX_4(I1,I2,I3,I4,Y,sel);
+input [1:0] sel;
+input [3:0] I1,I2,I3,I4;
+output [3:0]Y;
+
+assign Y = (sel == 2'b00) ? I1 :(sel == 2'b01) ? I2 :(sel == 2'b10) ? I3 : I4;
+
+endmodule
