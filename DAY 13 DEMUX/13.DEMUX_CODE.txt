@@ -1,0 +1,20 @@
+module DEMUX1_4(I,Y1,Y2,Y3,Y4,sel);
+input [3:0]I;
+input [1:0]sel;
+output reg[3:0]Y1,Y2,Y3,Y4;
+
+always@(I or sel) begin
+
+    Y1 = 4'b0000;
+    Y2 = 4'b0000;
+    Y3 = 4'b0000;
+    Y4 = 4'b0000;
+    case(sel)
+        2'b00: Y1 = I; 
+        2'b01: Y2 = I; 
+        2'b10: Y3 = I; 
+        2'b11: Y4 = I; 
+    endcase
+end
+
+endmodule
