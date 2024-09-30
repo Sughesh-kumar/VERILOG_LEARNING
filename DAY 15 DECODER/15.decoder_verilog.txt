@@ -1,0 +1,15 @@
+module DECODER3_8(i,y);
+input [2:0]i;
+output [7:0]y;
+
+    and g1(y[0],~i[2],~i[1],~i[0]);
+    and g2(y[1],~i[2],~i[1],i[0]);
+    and g3(y[2],~i[2],i[1],~i[0]);
+    and g4(y[3],~i[2],i[1],i[0]);
+    and g5(y[4],i[2],~i[1],~i[0]);
+    and g6(y[5],i[2],~i[1],i[0]);
+    and g7(y[6],i[2],i[1],~i[0]);
+    and g8(y[7],i[2],i[1],i[0]);
+
+
+endmodule
