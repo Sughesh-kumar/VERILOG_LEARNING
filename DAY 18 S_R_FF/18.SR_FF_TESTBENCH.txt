@@ -1,0 +1,25 @@
+module SR_FF_TB;
+reg [1:0]sr;
+reg clk,rst;
+wire q;
+
+SR_FF uut (sr,clk,rst,q);
+
+initial begin
+clk=1;
+forever #5clk=~clk;
+end
+
+initial begin
+
+rst=1;
+#20sr=2'b00;
+rst=0;
+#20sr=2'b01;
+#20sr=2'b10;
+#20
+sr=2'b11;#20
+$finish;
+end
+endmodule
+
