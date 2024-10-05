@@ -1,0 +1,16 @@
+module SISO(
+input clk,in,
+output reg out
+);
+reg data0,data1,data2;
+
+always@(posedge clk)
+    begin
+        data0<=in;
+        data1<=data0;
+        data2<=data1;
+        out<=data2;
+    end
+endmodule
+
+

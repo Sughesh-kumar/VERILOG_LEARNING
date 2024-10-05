@@ -1,0 +1,17 @@
+module SISO_TB;
+    reg in, clk;
+    wire out;
+    SISO dut (.in(in),.clk(clk),.out(out));
+
+    initial begin
+        clk = 0;
+        
+        in = 1;      
+        #50 in = 0;  
+        #50 in = 1;   
+        #50 in = 0;   
+        #250;         
+        $finish;    
+    end
+    always #25 clk = ~clk;
+endmodule
