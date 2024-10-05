@@ -1,0 +1,26 @@
+module T_FF_TB;
+reg T,clk;
+wire q;
+
+T_FF dut (T,clk,q);
+
+initial begin
+clk=0;
+forever #5 clk=~clk;
+end
+
+initial begin
+T=0;
+#5
+T=1;
+#5
+T=1;
+#10
+T=0;
+#10
+T=1;
+#10
+$finish;
+end
+
+endmodule
