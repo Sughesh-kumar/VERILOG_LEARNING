@@ -1,0 +1,18 @@
+module PISO_TB;
+    reg clk, mode;
+    reg [3:0] in;
+    wire out;
+
+    PISO dut(.clk(clk), .mode(mode), .in(in), .out(out));
+
+    initial begin 
+        clk = 0;
+        in = 4'b1001;
+        mode = 1;
+        #10;
+        mode = 0;
+        #40; 
+        $stop; 
+    end
+    always #5 clk = ~clk; 
+endmodule

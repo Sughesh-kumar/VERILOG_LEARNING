@@ -1,0 +1,20 @@
+module PISO (clk, mode, out, in);
+    input clk, mode;
+    input [3:0] in;
+    output reg out;
+    reg [3:0] q = 0;
+
+    always @(posedge clk) begin 
+        if (mode) begin
+            q <= in; 
+        end 
+        else begin
+            out <= q[3]; 
+            q[3] <= q[2];
+            q[2] <= q[1];
+            q[1] <= q[0];
+            q[0] <= 1'b0;
+
+        end
+    end
+endmodule
