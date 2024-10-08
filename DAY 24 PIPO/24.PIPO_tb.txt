@@ -1,0 +1,28 @@
+module PIPO_TB;
+    reg clk, clear;
+    reg [3:0] in;
+    wire [3:0] out;
+
+    PIPO dut (.clk(clk), .clear(clear), .in(in), .out(out));
+
+    initial begin
+        clk = 0;
+        clear = 0;
+        in = 4'b0000;
+        
+        #5 clear = 1'b1;
+        #5 clear = 1'b0;
+
+        #10 in = 4'b1001;
+        #10 in = 4'b1010;
+        #10 in = 4'b1011;
+        #10 in = 4'b1110;
+        #10 in = 4'b1111;
+        #10 in = 4'b0000;
+
+        #10;
+        $stop;
+    end
+
+    always #5 clk = ~clk;
+endmodule
