@@ -1,0 +1,17 @@
+module RING_COUNTER_TB;
+    reg clk, clr;
+    wire [3:0]q;
+
+    RING_COUNTER dut (.clk(clk), .clr(clr), .q(q));
+
+    initial begin
+        clk = 0;
+        clr = 1'b0;
+        #50 clr = 1'b1;
+        #10 clr = 1'b0; 
+    end
+
+    always begin
+        #50 clk = ~clk; 
+    end
+endmodule
