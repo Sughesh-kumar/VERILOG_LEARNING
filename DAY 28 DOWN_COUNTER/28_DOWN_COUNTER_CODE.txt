@@ -1,0 +1,12 @@
+module DOWN_COUNTER(input clk, reset, output [3:0] counter);
+reg [3:0] counter_down;
+
+always @(posedge clk or posedge reset)
+begin
+    if(reset)
+        counter_down <= 4'b0000;
+    else
+        counter_down <= counter_down - 4'b0001;
+    end 
+assign counter = counter_down;
+endmodule
