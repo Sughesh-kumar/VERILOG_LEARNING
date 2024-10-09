@@ -1,0 +1,15 @@
+module UD_COUNTER(input clk,rst,sel, output [3:0]count);
+reg [3:0]counter;
+
+always@(posedge clk or posedge rst) begin
+
+if(rst)
+    counter<=4'b0000;
+else
+    if(sel)
+        counter<=counter+4'b0001;
+    else
+        counter<=counter-4'b0001;
+end
+assign count = counter;
+endmodule
