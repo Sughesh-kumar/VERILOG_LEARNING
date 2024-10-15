@@ -1,0 +1,44 @@
+module SD_TB;
+reg x;
+reg clk;
+reg reset;
+wire z;
+
+SD uut (
+    .x(x),
+    .clk(clk),
+    .reset(reset),
+    .z(z)
+);
+
+initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
+end
+
+initial begin
+    reset = 1;
+    x = 0;
+    #10;
+    reset = 0; 
+
+    #10 x = 0;
+    #10 x = 1; 
+    #10 x = 1; 
+    #10 x = 0; 
+    #10 x = 1; 
+    #10 x = 0; 
+    #10 x = 0; 
+    #10 x = 1; 
+    #10 x = 1; 
+    #10 x = 0;
+    #10 x = 1;
+    #10 x = 0; 
+    #10 x = 1;
+    #10 x = 1;
+    #10 x = 0;
+    #10 x = 1;
+    #10 x = 0;
+    #10 $finish;
+end
+endmodule
