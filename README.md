@@ -15,10 +15,10 @@ Welcome to my **30 Days of Verilog** journey! This repo documents my hands-on le
 
 ## 📂 Folder Structure
 
-Each folder (e.g., `DAY10_BCD_TO_EXCESS3`) contains:
+Each folder contains:
 - ✅ RTL Code (`.v`)
 - 🔍 Testbench (`_tb.v`)
-- 📸 Simulation Screenshots (optional)
+- 📸 Simulation Screenshots 
 
 ---
 
@@ -67,9 +67,3 @@ Each folder (e.g., `DAY10_BCD_TO_EXCESS3`) contains:
 - 📐 **Design Type**: RTL
 
 ---
-
-## 🔄 How to Run
-
-1. 📥 Clone this repo:
-   ```bash
-   git clone https://github.com/yourusername/verilog_learning.git
